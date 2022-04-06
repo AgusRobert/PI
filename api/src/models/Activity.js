@@ -9,17 +9,23 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    dificulty:{
+    difficulty:{
       type: DataTypes.INTEGER,
       validate:{
         isInt: true,
         min:1,
         max:5
       } },
-    duration:{ type: DataTypes.INTEGER,},
-    season:{ type: DataTypes.ENUM({
-      values:["Verano", "Otoño", "Invierno","Primavera"]
-    }),}
+    duration:{ type: DataTypes.INTEGER,
+      validate:{
+        isInt: true,
+        min:1,
+        max:72
+      } },
+    season:{ type: DataTypes.ENUM(
+     "Summer", "Fall", "Winter","Spring"
+    ),
+    allowNull: false,}
   });
 };
 // ID
