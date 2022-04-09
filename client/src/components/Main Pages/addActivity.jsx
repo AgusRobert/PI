@@ -35,6 +35,7 @@ useEffect(()=>{
    const RegExAlfa= /^[A-Za-z]+$/
    const RegExNum = /^[0-9]*$/
    const RegExInt =  /^[-+]?[1-9]\d*$/;
+   
    if(!values.name){
      errores.name='Activity needs a name.'
    }else if(!RegExAlfa.test(values.name)){
@@ -49,7 +50,7 @@ useEffect(()=>{
 }
   if(!values.duration){
     errores.duration='Activity needs a specific duration.'
-  }else if(!RegExNum.test(values.difficulty)||!RegExInt.test(values.difficulty)){
+  }else if(!RegExNum.test(values.duration)||!RegExInt.test(values.duration)){
     errores.duration='You have to use only NUMBERS (0-9) for this field'
 }else if(values.duration >72){
   errores.difficulty='Activities can take up to 72 hs'
@@ -63,11 +64,20 @@ useEffect(()=>{
       [e.target.name]: e.target.value,
     });
   }
+  function onInputChangeN(e) {
+    e.preventDefault();
+    setActividad({
+      ...actividad,
+      [e.target.name]: Number(e.target.value)
+    });
+  }
   function onSubmit(e) {
     e.preventDefault();
-    dispatch(postAct(actividad));
-   //setErrores(validate(actividad));
-   setSubmit(true)
+   setErrores(validate(actividad));
+   setSubmit(true) 
+   if(Object.keys(errores).length===0 && setSubmit){
+     axios.post( "http://localhost:3001/api/activities/addActivity", actividad)
+    };
   }
   // function addCountrytoActivity(id) {
   //   setActividad({
@@ -122,7 +132,7 @@ useEffect(()=>{
       <p>
         <label htmlFor="">Difficulty: </label>
         <input
-          onChange={e=> onInputChange(e)}
+          onChange={e=> onInputChangeN(e)}
           name="difficulty"
           type="number"
           placeholder="How hard is it?"
@@ -133,7 +143,7 @@ useEffect(()=>{
       <p>
         <label htmlFor="">Duration: </label>
         <input
-          onChange={e=> onInputChange(e)}
+          onChange={e=> onInputChangeN(e)}
           name="duration"
           type="number"
           placeholder="How long does it take?"
@@ -156,3 +166,4 @@ useEffect(()=>{
     </form>
   );
 }
+

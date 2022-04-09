@@ -1,5 +1,4 @@
 import React from "react";
-import Country from "./country";
 import { Link } from "react-router-dom";
 const CountriesXP =({countries, loading})=>{
     

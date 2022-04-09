@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+  .search {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: transparent;
+    font-family: 'Staatliches', cursive;
+    
+  }
+  .search form {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: transparent;
+    
+  }
+  .search input {
+    float: left;
+    color: #000000;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #fdedff;
+    border: #fdedff;
+    font-family: 'Staatliches', cursive;
+    outline: none;
+  }
+ 
+  .search input:hover {
+    background-color: #ff96b4e7;
+    color: rgba(250, 242, 242, 0.831);
+    opacity: 100%;
+    transition: ease-in;
+    border: transparent;
+  }
+  .search input::selection {
+    background-color: #ff084e;
+    color: rgba(250, 242, 242, 0.831);
+    opacity: 100%;
+    border: #fdedff;
+  }
+  .search button {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #fdedff;
+    border: #fdedff;
+    font-family: 'Staatliches', cursive;
+  }
+  .search button:hover {
+    background-color: #ff084e;
+    color: rgba(250, 242, 242, 0.831);
+    opacity: 100%;
+  }
+
+  
+ 

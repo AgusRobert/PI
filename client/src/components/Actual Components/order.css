@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+  .order {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 28px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: transparent;
+    font-family: 'Staatliches', cursive;
+    outline: none;
+    
+  }
+  .order select {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #fdedff;
+    font-family: 'Staatliches', cursive;
+    outline: none;
+  }
+  .order select:hover{
+      background-color: #ff96b4e7;;
+  }
+  .order option:focus{
+ outline: none;
+ background-color:#ff084e; 
+  }
+  
+  .order option {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #fdedff;
+    border: #fdedff;
+    font-family: 'Staatliches', cursive;
+    outline: none;
+  }
+ 
+  .order option:hover {
+    background-color: #ff96b4e7;
+    color: rgba(250, 242, 242, 0.831);
+    opacity: 100%;
+    transition: ease-in;
+    border: transparent;
+  }
+  .order option::selection {
+    background-color: #ff96b4e7;
+    color: rgba(250, 242, 242, 0.831);
+ 
+  }
+ 

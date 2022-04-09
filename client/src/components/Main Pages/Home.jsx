@@ -10,12 +10,15 @@ import Country from "../Actual Components/country";
 import { Link } from "react-router-dom";
 import { fetchCountries } from "../../store/actions";
 import Pagination from "../Actual Components/Pagination";
+import'./Home.css'
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [countriesPerPage] = useState(10);
   let countries = useSelector((state) => state.filteredCountries);
+  let countriesC = useSelector((state) => state.filterCopia)
   let dispatch = useDispatch();
+
   useEffect(() => {
     setLoading(true);
     dispatch(fetchCountries());
@@ -24,14 +27,17 @@ export default function Home() {
   useEffect(() => {
      setCurrentPage(1)
   }, [countries]);
-  
+ 
+ 
   const iLastCountry = currentPage * countriesPerPage;
   const iFirstCountry = iLastCountry - countriesPerPage;
   const currentCountry = countries.slice(iFirstCountry, iLastCountry);
   const paginate = (pageN) => setCurrentPage(pageN)
   return (
-    <>
-      <SearchBar /> <ContinentFilter />
+  <>
+  <body className="Home">
+      <SearchBar /> 
+      <ContinentFilter />
       <OrderAz />
       <OrderPop />
       {/* <Countries /> */}
@@ -40,8 +46,9 @@ export default function Home() {
         countriesPerPage={countriesPerPage}
         totalCountries={countries.length}
         paginate={paginate}
+        // currentPage = {currentPage}
       />
-    
+    </body>
     </>
   );
 }

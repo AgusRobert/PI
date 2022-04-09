@@ -1,11 +1,10 @@
-import { FETCH_COUNTRIES, SEARCH_COUNTRIES, SORT_AZ,SORT_BY_POP,FILTER_CONTINENT, POST_ACT } from "../actions";
+import { FETCH_COUNTRIES, SEARCH_COUNTRIES, SORT_AZ,SORT_BY_POP,FILTER_CONTINENT, POST_ACT, FETCH_ACTIVITIES } from "../actions";
 import { POB_DES, ALFA_ASC} from "../../constants/sort";
 const initialState = {
   countries: [],
   filteredCountries: [],
   activities:[],
-  order:'asc',
-  tipoDeOrder:'Alfabetico'
+ 
 };
 
 export default function reducer(state = initialState, action) {
@@ -14,7 +13,14 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         countries: action.payload,
-        filteredCountries: action.payload
+        filteredCountries: action.payload,
+        
+      };
+      case FETCH_ACTIVITIES:
+      return {
+        ...state,
+        activities:action.payload
+       
       };
     case SEARCH_COUNTRIES:
       return {
@@ -25,6 +31,7 @@ export default function reducer(state = initialState, action) {
         return {
           ...state,
           filteredCountries: action.payload,
+         
         };
       case SORT_BY_POP:
         let orderCountriesPop = [...state.filteredCountries];
@@ -57,7 +64,8 @@ export default function reducer(state = initialState, action) {
         order: action.payload,
         filteredCountries: orderCountriesAz,
       };
-     
+      case POST_ACT:
+        return{...state}
     default:
       return state;
   }

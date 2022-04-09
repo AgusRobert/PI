@@ -15,9 +15,10 @@ export default function Activities() {
           <Activity
             key={i}
             name={activity.name}
-            difficulty={activity.difficulty}
+            difficulty= {activity.difficulty}
             duration={activity.duration}
             season={activity.season}
+            countries={activity.countries}
           />
         );
       })}

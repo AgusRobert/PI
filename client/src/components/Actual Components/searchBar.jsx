@@ -1,9 +1,10 @@
 import {useState} from 'react'
 import { searchCountries } from '../../store/actions';
 import { useDispatch } from 'react-redux';
+import "./searchBar.css"
 export default function SearchBar () {
     
-    const [search,setSearch] = useState (' ')
+    const [search,setSearch] = useState ('')
     let dispatch = useDispatch()
     function onSubmit(e){
       e.preventDefault();
@@ -13,10 +14,11 @@ export default function SearchBar () {
         e.preventDefault()
         setSearch (e.target.value)
     }
-    return <div>
+    return <div className='search'>
         <form onSubmit={onSubmit}>
-            <input type="text" onChange={onInputChange} value = {search} />
-            <input type="submit" value="Search" />
+            
+            <input  placeholder="Search a country..." type="text" onChange={onInputChange} value = {search} />
+           <button type="submit" value="Search">Search</button> 
         </form>
         
     </div>

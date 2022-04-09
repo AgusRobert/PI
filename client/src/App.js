@@ -5,19 +5,21 @@ import AddActivity from "./components/Main Pages/addActivity";
 import NavBar from "./components/Actual Components/NavBar";
 import Activities from "./components/Main Pages/Activities";
 import Home from "./components/Main Pages/Home";
+import Landing from "./components/Main Pages/Landing";
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/:idCountry" element={<CountryDetail />}></Route>
+      <Route exact path="/" element={<Landing />}></Route>
+        <Route path="/Home" element={ <><NavBar /> <Home /></>}></Route>
+        <Route path="/:idCountry" element={<> <NavBar /><CountryDetail /></>}></Route>
         <Route
           exact
           path="/activities/addActivity"
-          element={<AddActivity />}
+          element={ <><NavBar /><AddActivity /></>}
         ></Route>
-        <Route path="/activities" element={<Activities />}></Route>
+        {/* <Route path="/activities" element={<Activities />}></Route> */}
       </Routes>
     </div>
   );

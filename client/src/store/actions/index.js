@@ -36,7 +36,7 @@ export function fetchActivities() {
 
 
 export function searchCountries(search) {
-  console.log(search)  
+ 
   return function (dispatch) {
         axios.get('http://localhost:3001/api/countries?name=' + search)
         .then((countries) => {
@@ -85,18 +85,3 @@ export function sortAz(order){
 //      return ACT;
 //    }
 // }
-export function postAct (payload){
-  return  function (dispatch){
-     
-     axios.post( "http://localhost:3001/api/activities/addActivity", payload)
-    .then((payload) => {
-      dispatch({
-        type: POST_ACT,
-        payload: payload
-      });
-    })
-    .catch((error)=>{
-       console.log(error)
-    })
-  }
-}
