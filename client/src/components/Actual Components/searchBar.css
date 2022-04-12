@@ -2,6 +2,7 @@
 
   .search {
     float: left;
+    display: flex;
     color: #000000;
     text-align: center;
     padding: 14px 16px;

@@ -7,6 +7,8 @@
     "@testing-library/react": "^11.2.1",
     "@testing-library/user-event": "^12.2.2",
     "axios": "^0.26.1",
+    "less": "^4.1.2",
+    "less-watch-compiler": "^1.16.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.7",
@@ -21,7 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "less": "less-watch-compiler less css index.less"
   },
   "eslintConfig": {
     "extends": [

@@ -28,6 +28,7 @@ const router = Router();
 router.get("/", async (req, res, next) => {
   const { name } = req.query;
   const { continent } = req.query;
+  const { activity } = req.query;
  let result = null
   try {
     
@@ -45,7 +46,7 @@ router.get("/", async (req, res, next) => {
           ]
       });
      res.json(result);
-      if (!result) {
+      if (result.length === 0 ) {
         return res.send({ error: `El país ${name} no existe.` });
       }
     }
@@ -59,6 +60,7 @@ router.get("/", async (req, res, next) => {
             ['name','ASC']
           ],
       });
+      
       if (!result){
         const response= await Country.findAll({
           order:[
@@ -71,6 +73,7 @@ router.get("/", async (req, res, next) => {
       res.json(result);
     
     }
+    
     else{
       const response= await Country.findAll({
         order:[

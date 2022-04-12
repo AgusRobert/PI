@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const { Activity, Country } = require("../db");
 const router = Router();
-
+const { Op } = require("sequelize");
 // router.get("/", (req, res) => {
 //   res.send("Soy el get ;)");
 // });
@@ -9,6 +9,7 @@ const router = Router();
 
 router.get("/", async (req, res, next) => {
   const { name } = req.query;
+  const { id } = req.query;
  let result = null
   try {
     if (name) {
@@ -20,11 +21,11 @@ router.get("/", async (req, res, next) => {
           },
           
         },
-        include:{
+        include:[{
           model: Country,
-          attributes:['name'],
-          through:{attributes:[]}
-        },
+          attributes:['id','name','continent'],
+          through:'ActivitiesCountries'
+        }],
         order:[
             ['name','ASC']
           ]
@@ -34,7 +35,26 @@ router.get("/", async (req, res, next) => {
         return res.send({ error: `La actividad ${name} no existe.` });
       }
     }
-    
+    if (id) {
+     
+      result = await Activity.findByPk(
+        id,{
+       include:[{
+         model: Country,
+         attributes:['id','img','name','continent'],
+         through:[]
+       }],
+       order:[
+           ['name','ASC']
+         ]
+     });
+      if(result){
+        res.json(result);
+      }
+     else {
+       return res.send({ error: `La actividad ${name} no existe.` });
+     }
+   }
     else{
       const response= await Activity.findAll({
         order:[
@@ -52,14 +72,14 @@ router.get("/", async (req, res, next) => {
 
 
 router.post("/addActivity", async (req, res, next) => {
- try{ const { country, name, difficulty, duration, season } = req.body;
-  if(country && name && difficulty && duration && season){ 
+ try{ const { countries, name, difficulty, duration, season } = req.body;
+  if(countries && name && difficulty && duration && season){ 
     const [activity, created] = await Activity.findOrCreate({
     //findorcreate aca
     where: { name, difficulty, duration, season },
     //form
   });
-  country.forEach(async (name)=>{
+  countries.forEach(async (name)=>{
     const pais = await Country.findOne({
     where: {
       name: name,
@@ -67,9 +87,10 @@ router.post("/addActivity", async (req, res, next) => {
   })
   await pais.addActivity(activity);
   })
-  return res.status(302).send("Actividad creada con exito");}
+  return res.send("Actividad creada con exito");
+}
  else{
-   res.status(404).json({error:'Falta un elemento del form'})
+   res.json({error:'Falta un elemento del form'})
  }
   
   } catch(error){

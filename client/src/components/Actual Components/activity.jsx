@@ -1,15 +1,12 @@
-import { Link } from "react-router-dom";
-
+import './activity.css'
 export default function Activity({ name,difficulty,duration,season}) {
 
   return (
-    <div>
-     
-        <h2>{name}</h2>
-        <h3> Difficulty: {difficulty}</h3>
-        <h3>Duration: {duration}</h3>
-        <h3>Season: {season}</h3>
-      
+    <div className='activ'>
+        <h3>{name}</h3>
+        <h4> Difficulty: {difficulty} /5</h4>
+        <h4>Duration: {duration} HS</h4>
+        <h4>Season: {season}</h4>
     </div>
   );
 }

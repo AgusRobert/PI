@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+  .pagination {
+   
+    justify-content: center;
+    display: flex;
+    color: #000000;
+    text-align: center;
+    padding-top: 20px;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: transparent;
+    font-family: 'Staatliches', cursive;
+    
+  }
+  .pagination select {
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    background-color:#fdedff;
+  }
+  .pagination select:hover{
+    background-color:#ff96b4e7;
+  }
+  .pagination option {
+    float: left;
+    color: #000000;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color:transparent;
+    border: none;
+    font-family: 'Staatliches', cursive;
+    outline: none;
+  }
+ 
+  .pagination option:hover {
+    background-color: #ff96b4e7;
+    color: rgba(250, 242, 242, 0.831);
+    opacity: 100%;
+    transition: ease-in;
+    border: transparent;
+  }
+  .pagination option::selection {
+    background-color: #ff084e;
+    color: rgba(250, 242, 242, 0.831);
+    opacity: 100%;
+    border: #fdedff;
+  }
+  .pagination a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color:#fdedff;
+    border: none;
+    border-radius: 15px;
+    font-family: 'Staatliches', cursive;
+  }
+  .pagination a:hover {
+    background-color: #ff084e;
+    color: rgba(250, 242, 242, 0.831);
+    opacity: 100%;
+  }
+  .pagination span {
+   
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    background-color:#ff084ec4;
+    border: none;
+    border-radius: 5px;
+    
+  }
+
+  
+ 

@@ -2,15 +2,16 @@
 .topnav {
     background-image: url(../../img/FONDO4.png);
     overflow: hidden;
-    opacity: 70%;
+    opacity: 75%;
+    justify-content: center;
   }
   
 
   .topnav a {
-    float: left;
+    float:left;
     color: #000000;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 30px;
     text-decoration: none;
     font-size: 17px;
     background-color: #fdedff;

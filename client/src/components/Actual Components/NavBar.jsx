@@ -5,9 +5,7 @@ function NavBar() {
   return (
     <div className="topnav">
      <a className="active" href="http://localhost:3000/Home">Countries</a> 
-      {/* <li>
-        <Link to="/activities">Actividades</Link>
-      </li> */}
+        <Link to="/activities">Activities</Link>
        <a href="http://localhost:3000/activities/addActivity">Add Activity</a> 
       </div>
   );

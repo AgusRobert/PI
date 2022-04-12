@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+ 
+  .activ h2 {
+    font-family: "Staatliches", cursive;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(240, 95, 151);
+    text-shadow: #000000db 1px 3px;
+    background: fixed;
+    background: #110d12db;
+    opacity: 85%;
+  }
+  
+  .activ img {
+    padding-top: 10px;
+    border-radius: 8%;
+    width: 55%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  .activ img:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  .activ h3 {
+    font-family: "Staatliches", cursive;
+    text-decoration: none;
+    text-align: center;
+    color: rgba(207, 21, 92, 0.805);
+    text-shadow: #000000d7 0.2px 2px;
+    background: fixed;
+    opacity: 85%;
+    text-size-adjust: 40%;
+  }
+  .activ h4 {
+    font-family: "Staatliches", cursive;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(15, 9, 11);
+    text-shadow: #00000038 1px 3px;
+    background: fixed;
+    opacity: 85%;
+    border-radius: 20%;
+    width: min-content;
+  }
+  .activ {
+    max-width: fit-content;
+    column-count: 5;
+    width: 600px;
+    gap: 5rem;
+    column-gap: 7rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  
+  .activ {
+    padding-left: 50px;
+    break-inside: avoid;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    background-blend-mode: difference;
+    background-size: contain;
+    border-radius: 15%;
+  }
+  

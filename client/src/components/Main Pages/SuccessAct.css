@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+.succ{
+    margin: auto;
+    width: 50%;
+   border: none;
+    padding: 10px;
+}
+
+.succ img{
+border-radius: 20%;
+opacity: 80%;
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 170px;
+width: 80%;
+margin-bottom: 20px;
+}
+
+.succ span{
+    font-size: larger ;
+    background: fixed;
+    background-color: rgba(229, 177, 218, 0.458);
+    border-radius: 10%;
+    font-family: "Staatliches", cursive;
+}

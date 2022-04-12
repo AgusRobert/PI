@@ -22,6 +22,7 @@
     background-color: #fdedff;
     font-family: 'Staatliches', cursive;
     outline: none;
+    border-radius: 10px;
   }
   .order select:hover{
       background-color: #ff96b4e7;;

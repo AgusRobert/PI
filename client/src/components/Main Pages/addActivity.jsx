@@ -1,9 +1,11 @@
-import { useState, useHistory, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import {postAct} from '../../store/actions'
+import './addActivity.css'
 export default function AddActivity() {
- 
+  let navigate = useNavigate()
     let dispatch = useDispatch()
   const [actividad, setActividad] = useState(
     { name: '',
@@ -76,18 +78,11 @@ useEffect(()=>{
    setErrores(validate(actividad));
    setSubmit(true) 
    if(Object.keys(errores).length===0 && setSubmit){
-     axios.post( "http://localhost:3001/api/activities/addActivity", actividad)
-    };
+    axios.post( "http://localhost:3001/api/activities/addActivity", actividad)
+    //navigate('/success')
+    }; 
+ 
   }
-  // function addCountrytoActivity(id) {
-  //   setActividad({
-  //     ...actividad,
-  //     countries: [...actividad.countries, id],
-  //   });
-  // }
-  // function onSelectChange(e){
-  //     dispatch(addCountrytoActivity(e.target.value.id))
-  // }
   function handleChange(e){
     e.preventDefault()
    setActividad({
@@ -101,23 +96,31 @@ useEffect(()=>{
       season: e.target.value
     });
   }
+  let counList = actividad.countries
   return (
-    <form onSubmit={e=> onSubmit(e)}>
+   <div className="activity">
+     <div>
+   <form className="activity" onSubmit={e=> onSubmit(e)}>
       <select name="select" onChange={e => handleChange(e)}>
       <option value="" disabled selected>Country</option>
       {countries.map((country) => {
           return (
             <option value= {country.name}>
-               
               {country.name}
-              {/* <button onClick={() => addCountrytoActivity(country.id)}>
-                Add to country
-              </button> */}
             </option>
           );
         })}
       </select >
-      <p>{errores.name}</p>
+      
+      {counList.map((selectedC) => {
+          return (
+           <>
+            <p className="selectC">{selectedC}</p>
+            </>
+          );
+        })}
+      
+      <p className="error">{errores.name}</p>
       <p>
         <label htmlFor="">Name: </label>
         <input
@@ -128,7 +131,7 @@ useEffect(()=>{
           value={actividad.name}
         />
       </p>
-      <p>{errores.difficulty}</p>
+      <p className="error">{errores.difficulty}</p>
       <p>
         <label htmlFor="">Difficulty: </label>
         <input
@@ -139,7 +142,7 @@ useEffect(()=>{
           value={actividad.difficulty}
         /> out of 5.
       </p>
-      <p>{errores.duration}</p>
+      <p className="error">{errores.duration}</p>
       <p>
         <label htmlFor="">Duration: </label>
         <input
@@ -161,9 +164,11 @@ useEffect(()=>{
         </select>
       </p>
       <p>
-        <input type="submit" />
+        <input className='botoncito' type="submit" />
       </p>
     </form>
+    </div>
+    </div>
   );
 }
 

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+.refresh{
+   
+        float: left;
+        color: #000000;
+        text-align: center;
+        padding: 28px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        background-color: transparent;
+        font-family: 'Staatliches', cursive;
+        outline: none;
+        
+      
+}
+.refresh a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #fdedff;
+    border: #fdedff;
+    font-family: 'Staatliches', cursive;
+    border-radius: 10px;
+  }
+  .refresh a:hover {
+    background-color: #ff084e;
+    color: rgba(250, 242, 242, 0.831);
+    opacity: 100%;
+  }

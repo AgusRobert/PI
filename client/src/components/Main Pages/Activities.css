@@ -1,0 +1,94 @@
+.activities {
+    padding-top: 5%;
+  
+    column-count: 2;
+  
+    gap: 5rem;
+    column-gap: 4rem;
+    padding-left: 10%;
+    width:fit-content;
+  }
+  
+  .activities_comp {
+    break-inside: avoid;
+  
+    overflow: hidden;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    background-color: #f8dffbdb;
+    background-blend-mode: difference;
+    background-size: contain;
+    border-radius: 15%;
+    width: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+  }
+  .activities_comp:hover{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.583);
+  }
+  .country h2 {
+    font-family: "Staatliches", cursive;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(240, 95, 151);
+    text-shadow: #000000db 0.2px 2px;
+    background: fixed;
+    background: #110d12db;
+    opacity: 85%;
+  }
+  
+  .content img {
+    padding-top: 10px;
+    border-radius: 8%;
+    width: 55%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  .content img:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  .content h2 {
+    font-family: "Staatliches", cursive;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(207, 21, 92);
+    text-shadow: #000000db 0.2px 1px;
+    background: fixed;
+    background-image: url(../../img/FONDOHOME.png);
+    opacity: 85%;
+  }
+  .contentA h4 {
+    font-family: "Staatliches", cursive;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(207, 21, 92);
+    text-shadow: #000000db 0.2px 2px;
+    background: fixed;
+    opacity: 85%;
+    border-radius: 20%;
+    width: min-content;
+  }
+  .contentA {
+    max-width: fit-content;
+    column-count: 8;
+    width: 800px;
+    gap: 5rem;
+    column-gap: 7rem;
+    justify-content: center;
+  
+    align-items: center;
+    align-content: center;
+  }
+  
+  .contentA__item {
+    padding-left: 50px;
+    break-inside: avoid;
+    align-items: center;
+    overflow: scroll;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    background-color: #f8dffbdb;
+    background-blend-mode: difference;
+    background-size: contain;
+    border-radius: 15%;
+  }
+  

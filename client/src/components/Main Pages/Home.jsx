@@ -5,12 +5,13 @@ import SearchBar from "../Actual Components/searchBar";
 import ContinentFilter from "../Actual Components/continentFilter";
 import OrderAz from "../Actual Components/orderAz";
 import OrderPop from "../Actual Components/orderPop";
+import ActivityFilter from "../Actual Components/activityFilter";
+import Refreshfilter from '../Actual Components/Refreshfilter'
 import Countries from "../Actual Components/countries";
 import Country from "../Actual Components/country";
 import { Link } from "react-router-dom";
 import { fetchCountries } from "../../store/actions";
 import Pagination from "../Actual Components/Pagination";
-import'./Home.css'
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,22 +34,25 @@ export default function Home() {
   const iFirstCountry = iLastCountry - countriesPerPage;
   const currentCountry = countries.slice(iFirstCountry, iLastCountry);
   const paginate = (pageN) => setCurrentPage(pageN)
+
+
   return (
-  <>
-  <body className="Home">
-      <SearchBar /> 
-      <ContinentFilter />
+    <>
+      <div><SearchBar /> <ContinentFilter /><ActivityFilter/>
       <OrderAz />
-      <OrderPop />
-      {/* <Countries /> */}
+      <OrderPop /> <Refreshfilter/>
+      </div>
+      <div>
       <Pages countries={currentCountry} loading={loading} />
+      </div>
       <Pagination
         countriesPerPage={countriesPerPage}
         totalCountries={countries.length}
         paginate={paginate}
-        // currentPage = {currentPage}
+        currentPage = {currentPage}
+        
       />
-    </body>
+    
     </>
   );
 }

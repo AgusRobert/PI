@@ -6,6 +6,7 @@ import NavBar from "./components/Actual Components/NavBar";
 import Activities from "./components/Main Pages/Activities";
 import Home from "./components/Main Pages/Home";
 import Landing from "./components/Main Pages/Landing";
+import Success from "./components/Main Pages/SuccessAct";
 function App() {
   return (
     <div className="App">
@@ -19,7 +20,8 @@ function App() {
           path="/activities/addActivity"
           element={ <><NavBar /><AddActivity /></>}
         ></Route>
-        {/* <Route path="/activities" element={<Activities />}></Route> */}
+        <Route path="/activities" element={<><NavBar /><Activities /></>}></Route>
+        <Route exact path="/success" element={<><NavBar /><Success/></>}></Route>
       </Routes>
     </div>
   );

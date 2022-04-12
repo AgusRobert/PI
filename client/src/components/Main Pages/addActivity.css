@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap");
+.activity {
+    display: flex;
+    justify-content: center;
+    color: #000000;
+    text-align: center;
+    padding: 19px 16px;
+    text-decoration: none;
+    font-size: 10px;
+    width: fit-content;
+    background:center;
+    font-family: "Maven Pro", sans-serif;
+    outline: none;
+    margin: auto;
+    align-items: center;
+  }
+  .activity div{
+      padding: auto;
+      padding-bottom: 20px;
+      text-align: center;
+      display:flex;
+      justify-content:space-evenly;
+      align-items:center;
+      background:#00000065;
+      background-size:cover;
+      width:min-content;
+      border-radius: 60px;
+      box-shadow: 10px 10px 8px #000000a3;
+      
+  }
+  .activity form{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    justify-content: center;
+  }
+  .activity select {
+    display:flexbox;
+    color: #000000;
+    text-align: center;
+    padding: 12px 16px;
+    padding-left: 30px;
+    text-decoration: none;
+   
+    font-size: 17px;
+    background-color: #fdedff;
+    font-family: "Maven Pro", sans-serif;
+    outline: none;
+    border-radius: 10px;
+  }
+  .activity select:hover{
+      background-color: #ff96b4e7;;
+  }
+  .activity option:focus{
+ outline: none;
+ background-color:#ff084e; 
+  }
+  
+  .activity option {
+  
+    color: #000000;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #fdedff;
+    border: #fdedff;
+    font-family: "Maven Pro", sans-serif;
+    outline: none;
+  }
+ 
+  .activity option:hover {
+    background-color: #ff96b4e7;
+    color: rgba(250, 242, 242, 0.831);
+    opacity: 100%;
+    transition: ease-in;
+    border: transparent;
+  }
+  .activity option::selection {
+    background-color: #ff96b4e7;
+    color: rgba(250, 242, 242, 0.831);
+ 
+  }
+  .activity input {
+ 
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #fdedff;
+    border: #fdedff;
+    font-family: "Maven Pro", sans-serif;
+    outline: none;
+    border-radius:15px ;
+  }
+ 
+  .activity input:hover {
+    background-color: #ff084e;
+    color: rgba(11, 11, 11, 0.831);
+    opacity: 70%;
+    border-radius:15px ;
+    transition: ease-in;
+    border: transparent;
+  }
+  .activity input::selection {
+    background-color: #ff084e;
+    color: rgba(250, 242, 242, 0.831);
+    opacity: 100%;
+    border: #fdedff;
+  }
+
+  .activity p{
+    color: #000000;
+    font-size: 15px;
+    font-weight: 200;
+    font-family: "Maven Pro", sans-serif; 
+    background: #f7dffac2;
+    width: fit-content;
+    border-radius: 15px;
+  }
+  .botoncito input{
+
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #fdedff;
+    border: #fdedff;
+    font-family: "Maven Pro", sans-serif;
+  }
+  .botoncito input:hover {
+    background-color: #ff084e;
+    color: rgba(250, 242, 242, 0.831);
+    opacity: 100%;
+  }
+  .error p{
+    color: #ff084e;
+    font-size: large;
+    font-family: "Maven Pro", sans-serif; 
+  }
+  .selectC {
+    display: flex;
+    justify-content: center;
+    color: #000000;
+    text-align: center;
+    padding: 19px 16px;
+    text-decoration: none;
+    font-size: 10px;
+    width: fit-content;
+    background:center;
+    font-family: "Maven Pro", sans-serif;
+    outline: none;
+    margin: auto;
+    align-items: center;
+  }
+  .selectC p{
+    color: #000000;
+    font-weight: 200;
+    font-size: 5px;
+    font-family: "Maven Pro", sans-serif; 
+    background: #f7dffac2;
+    width: fit-content;
+    border-radius: 15px;
+  }

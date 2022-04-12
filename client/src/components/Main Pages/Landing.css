@@ -1,6 +1,60 @@
 
+.landing{
+    margin: 0;
+    padding: 0;
 
-.slideshow,
+
+}
+.container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    animation: animate 10s ease-in-out infinite;
+}
+.outer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+.details{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.details button{
+background-image: url(../../img/LANDINGBTN.png);
+height: 300px;
+width: 305px;
+padding-right: 15px;
+background-size: cover;
+padding-top: 20px;
+color: rgba(0, 30, 94, 0);
+border-radius: 200px;
+ border-color: #333;
+ cursor: default;
+ text-decoration: none;
+ font-size: 500;
+}
+.details button:hover{
+background-image: url(../../img/LANDINGBTN2.png); 
+size: 50%;
+}
+@keyframes animate{
+    0%, 100% {background-image: url(../../img/FONDO1.jpg.png);}
+    20%{background-image: url(../../img/FONDO2.jpg.png);}
+    40%{background-image: url(../../img/FONDO3.jpg.png);}
+    60%{background-image: url(../../img/FONDO4.jpg.png);}
+    80%{background-image: url(../../img/FONDO5.jpg.png);}
+}
+
+
+/* .slideshow,
 .slideshow:after { 
     position: fixed;
     width: 100%;
@@ -90,4 +144,4 @@
 }
 @media screen and (max-width: 600px) { 
     .slideshow li div h3 { font-size: 80px }
-}
+} */

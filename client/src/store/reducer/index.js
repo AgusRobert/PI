@@ -1,5 +1,7 @@
-import { FETCH_COUNTRIES, SEARCH_COUNTRIES, SORT_AZ,SORT_BY_POP,FILTER_CONTINENT, POST_ACT, FETCH_ACTIVITIES } from "../actions";
+import { FETCH_COUNTRIES, SEARCH_COUNTRIES, SORT_AZ,SORT_BY_POP,FILTER_CONTINENT, POST_ACT, FETCH_ACTIVITIES ,FILTER_ACTIVITY} from "../actions";
 import { POB_DES, ALFA_ASC} from "../../constants/sort";
+
+
 const initialState = {
   countries: [],
   filteredCountries: [],
@@ -23,16 +25,26 @@ export default function reducer(state = initialState, action) {
        
       };
     case SEARCH_COUNTRIES:
-      return {
+   if(action.payload.length===0){
+     alert('Country not found')
+   } else{
+     return {
         ...state,
         filteredCountries: action.payload,
-      };
+      }
+   };
+    
       case FILTER_CONTINENT:
         return {
           ...state,
           filteredCountries: action.payload,
          
         };
+        case FILTER_ACTIVITY:
+          return{
+            ...state,
+            filteredCountries: action.payload,
+          }
       case SORT_BY_POP:
         let orderCountriesPop = [...state.filteredCountries];
         orderCountriesPop = orderCountriesPop.sort((a,b) => {

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import'./pagination.css'
 const Pagination = ({countriesPerPage,totalCountries,paginate, currentPage}) =>{
     
     const [pageXPages, setPagesXPages] = useState([])
@@ -11,58 +12,36 @@ const Pagination = ({countriesPerPage,totalCountries,paginate, currentPage}) =>{
     }
    let fistPage = pageN[0]
    let lastPage = pageN[pageN.length-1]
-//    let prev =  (pageN) => setPagesXPages(pageN)
-//    let next = () => {
-   
-//    let nextP = ()=>{
-//         let pageS = [] 
-//         let n = Math.floor(currentPage/5) 
-//         let pagina = currentPage
-//         paginate(pagina+1)
-//         if(currentPage >= 5){
-//            pageS =  pageN.slice(0,5) ;
-//            return pageS   
-//         } else{
-//             pageS =  pageN.slice(n*5+1,n*5+5) 
-//         } 
-//    }
-  
-//    let prevP = ()=>{
-//     let pageS = [] 
-//     let n = Math.floor(currentPage/5) 
-//     let pagina = currentPage
-//     paginate(pagina-1)
-//     if(currentPage = 1){
-//        return paginate
-//     }
-//     if(currentPage >= 5){
-//        pageS =  pageN.slice(0,5) ;
-//        return pageS   
-//     } else{
-//         pageS =  pageN.slice(n*5+1,n*5+5) 
-//     } 
-
 function handleSelect(e){
     e.preventDefault()
   paginate(e.target.value)
   }
-  
+function handleClick(e){
    
+    if(currentPage>1){
+        paginate(currentPage -1)}
+    
+}
+function handleClick2(e){
+   
+    if(currentPage< pageN[pageN.length-1]){
+        paginate(currentPage +1)}
+}
     return( 
-        <nav>
+        <nav className="pagination">
          <a  onClick={()=>paginate(fistPage)} href="#!">First Page</a>
-        
-            
+         <a  onClick={(e)=>handleClick()} href="#!">Prev</a>
+            <span>{currentPage}</span>
             <select name = 'pages' onChange={e => handleSelect(e)}>
                 {pageN.map((number)=>{
                     return (
-                        <option value = {number}>{number}</option>
+                        <option  key={number}value = {number}>{number}</option>
                     // <a onClick={()=>paginate(number)} href="#!">{number}</a>
                   )  
                     })}
         </select>
             
-        
+        <a  onClick={(e)=>handleClick2(e)} href="#!">Next</a>
          <a  onClick={()=>paginate(lastPage)} href="#!">Last Page</a>
         </nav>
     )

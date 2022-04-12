@@ -4,8 +4,7 @@ import { sortByPop } from "../../store/actions";
 import'./order.css'
 export default function OrderPop() {
   const dispatch = useDispatch();
-    
-
+  
   function onSelectChange(e) {
     dispatch(sortByPop(e.target.value));
   }

@@ -6,6 +6,8 @@ export const SORT_AZ='SORT_AZ'
 export const FILTER_CONTINENT = 'FILTER_CONTINENT'
 export const FETCH_ACTIVITIES = 'FETCH_ACTIVITIES'
 export const POST_ACT= 'POST_ACT'
+export const FILTER_ACTIVITY = 'FILTER_ACTIVITY'
+
 export function fetchCountries() {
   return function (dispatch) {
     axios.get("http://localhost:3001/api/countries/").then((countries) => {
@@ -50,7 +52,22 @@ export function searchCountries(search) {
         })
       };
 }
-
+export function filterActividad (activity){
+  return function (dispatch) {
+    axios.get('http://localhost:3001/api/activities?id=' + activity)
+    .then((activity) => {
+        let paisfiltro = (activity.data)
+        let paisesF= paisfiltro.countries
+      dispatch({
+        type: FILTER_ACTIVITY,
+        payload: paisesF
+      });
+    })
+    .catch((error)=>{
+       console.log(error)
+    })
+  };
+}
 export function filterContinent(continent) {
   return function (dispatch) {
       axios.get('http://localhost:3001/api/countries?continent=' + continent)

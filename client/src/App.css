@@ -1,5 +1,15 @@
 .App {
   text-align: center;
+  background-image: url(./img/FONDOPAG.png);
+  background-size: cover;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
 }
 
 .App-logo {

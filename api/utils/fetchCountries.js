@@ -4,6 +4,8 @@ const axios = require("axios");
 //Funcion que recorre el array que nos llega y alimenta la base de datos.
 
 const fetchCountries = async () => {
+ 
+  
   let countries = await axios.get("https://restcountries.com/v3.1/all");
   countries.data.forEach((country) => {
     const {
