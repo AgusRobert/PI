@@ -3,32 +3,10 @@ const { Op } = require("sequelize");
 const { Country, Activity } = require("../db");
 const router = Router();
 
-// axios.get('https://restcountries.com/v3.1/all',async function(req,res){
-
-//  const array = req.body
-//  await array.forEach(country => {
-//    const {name,cioc,flags,continents,capital,subregion,area,population} = country
-//         Country.findOrCreate({
-//             where:{
-//                 ID:cioc,
-//                 name:name,
-//                 img:flags.png,
-//                continents:continents,
-//                capital:capital,
-//                subregion:subregion,
-//                area:area,
-//                population:population
-//             }
-//         })
-//  });
-//     res.send('Paises añadidos');
-
-// })
 
 router.get("/", async (req, res, next) => {
   const { name } = req.query;
   const { continent } = req.query;
-  const { activity } = req.query;
  let result = null
   try {
     

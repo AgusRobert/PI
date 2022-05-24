@@ -17,6 +17,7 @@ const CountriesXP = ({ countries, loading }) => {
             <div >
               <h2>{country.name}</h2>
               <h4>Continent : {country.continent}</h4>
+              <h4>Population : {country.population}</h4>
             </div>
           </Link>
         </div>

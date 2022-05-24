@@ -1,4 +1,4 @@
-import { FETCH_COUNTRIES, SEARCH_COUNTRIES, SORT_AZ,SORT_BY_POP,FILTER_CONTINENT, POST_ACT, FETCH_ACTIVITIES ,FILTER_ACTIVITY} from "../actions";
+import { FETCH_COUNTRIES, SEARCH_COUNTRIES, SORT_AZ,SORT_BY_POP,FILTER_CONTINENT, POST_ACT, FETCH_ACTIVITIES ,FILTER_ACTIVITY,BOTON} from "../actions";
 import { POB_DES, ALFA_ASC} from "../../constants/sort";
 
 
@@ -76,9 +76,11 @@ export default function reducer(state = initialState, action) {
         order: action.payload,
         filteredCountries: orderCountriesAz,
       };
+     
       case POST_ACT:
         return{...state}
     default:
       return state;
   }
 }
+//popMax =>[{},{},{}] array-obj-

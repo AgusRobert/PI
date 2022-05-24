@@ -7,6 +7,7 @@ export const FILTER_CONTINENT = 'FILTER_CONTINENT'
 export const FETCH_ACTIVITIES = 'FETCH_ACTIVITIES'
 export const POST_ACT= 'POST_ACT'
 export const FILTER_ACTIVITY = 'FILTER_ACTIVITY'
+export const BOTON = 'BOTON'
 
 export function fetchCountries() {
   return function (dispatch) {
@@ -94,6 +95,13 @@ export function sortAz(order){
   return {
       type: SORT_AZ,
       payload: order
+  }
+}
+
+export function minMax(payload){
+  return {
+      type: BOTON,
+      payload: payload
   }
 }
 // export function postAct(payload){

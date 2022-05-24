@@ -79,7 +79,7 @@ useEffect(()=>{
    setSubmit(true) 
    if(Object.keys(errores).length===0 && setSubmit){
     axios.post( "http://localhost:3001/api/activities/addActivity", actividad)
-    //navigate('/success')
+    navigate('/success')
     }; 
  
   }

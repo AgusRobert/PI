@@ -11,7 +11,7 @@
     text-decoration: none;
     background-color: transparent;
     font-family: 'Staatliches', cursive;
-    
+    padding-bottom: 20px;
   }
   .pagination select {
     color: #000000;

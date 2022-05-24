@@ -41,7 +41,7 @@ router.get("/", async (req, res, next) => {
         id,{
        include:[{
          model: Country,
-         attributes:['id','img','name','continent'],
+         attributes:['id','img','name','continent','population'],
          through:[]
        }],
        order:[

@@ -12,12 +12,12 @@ import Country from "../Actual Components/country";
 import { Link } from "react-router-dom";
 import { fetchCountries } from "../../store/actions";
 import Pagination from "../Actual Components/Pagination";
+import Botoncito from "./BOTN";
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [countriesPerPage] = useState(10);
   let countries = useSelector((state) => state.filteredCountries);
-  let countriesC = useSelector((state) => state.filterCopia)
   let dispatch = useDispatch();
 
   useEffect(() => {
@@ -38,10 +38,11 @@ export default function Home() {
 
   return (
     <>
-      <div><SearchBar /> <ContinentFilter /><ActivityFilter/>
-      <OrderAz />
-      <OrderPop /> <Refreshfilter/>
+      <div><SearchBar /> <ContinentFilter /><ActivityFilter/> 
       </div>
+      {/* <Botoncito/> */}
+      <div><OrderAz />
+      <OrderPop /> <Refreshfilter/></div>
       <div>
       <Pages countries={currentCountry} loading={loading} />
       </div>
