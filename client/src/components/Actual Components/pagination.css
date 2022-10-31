@@ -59,7 +59,7 @@
     font-size: 17px;
     background-color:#fdedff;
     border: none;
-    border-radius: 15px;
+    border-radius: 40px;
     font-family: 'Staatliches', cursive;
   }
   .pagination a:hover {
